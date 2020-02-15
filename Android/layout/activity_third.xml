@@ -56,5 +56,4 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="500dp"/>
 
-    <!--    visible, invisible, gone-->
 </androidx.constraintlayout.widget.ConstraintLayout>
