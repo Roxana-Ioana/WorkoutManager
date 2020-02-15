@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B3E5FC"
+    tools:context=".SecondActivity">
+
+    <Button
+        android:id="@+id/walkingBtn"
+        android:layout_width="161dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="200dp"
+        android:background="#d5c2b9"
+        android:padding="30dp"
+        android:text="walking"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--    tools nu o sa apara cand dau run, doar in preview-->
+    <Button
+        android:id="@+id/runningBtn"
+        android:layout_width="161dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="#d5c2b9"
+        android:text="running"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/walkingBtn"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/cyclingBtn"
+        android:layout_width="161dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="#d5c2b9"
+        android:padding="30dp"
+        android:text="cycling"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/runningBtn" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose an activity"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="500dp"/>
+
+    <!--    visible, invisible, gone-->
+</androidx.constraintlayout.widget.ConstraintLayout>
