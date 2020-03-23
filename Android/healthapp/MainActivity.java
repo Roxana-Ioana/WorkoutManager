@@ -22,9 +22,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final Intent intent = new Intent(this, SecondActivity.class);
-
         final EditText ageTxt = findViewById(R.id.ageNb);
-
+        
         ImageButton hardBtn = findViewById(R.id.hard);
         hardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
                     Integer ageValue = Integer.parseInt(age);
                     if (ageValue > 200) {
                         Toast.makeText(MainActivity.this, "Please introduce a valid age value!", Toast.LENGTH_SHORT).show();
-
                     } else {
                         intent.putExtra(AGE, age);
                         startActivity(intent);
