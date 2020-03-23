@@ -28,7 +28,6 @@ public class FourthActivity extends AppCompatActivity {
         TextView durationTxt = findViewById(R.id.durationTxt);
         TextView speedAvgText = findViewById(R.id.speedAvgVal);
         TextView pulseAvgText = findViewById(R.id.pulseAvgVal);
-
         Bundle extras = intent.getExtras();
 
         if (intent.hasExtra(ACTIVITY)) {
