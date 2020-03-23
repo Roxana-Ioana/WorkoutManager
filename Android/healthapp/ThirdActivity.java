@@ -44,27 +44,19 @@ public class ThirdActivity extends AppCompatActivity {
 
     private TextView activityText, responseText, velocityText;
     private Button startBtn, stopBtn;
-
     private String velocity;
     private String pulse;
-
     private LocationManager locationManager;
     private DatabaseReference dbRef;
-
     private Intent activityIntent;
-
     private int userAge;
     private String targetWorkout;
-
     private LocalDateTime startTime;
     private LocalDateTime endTime;
-
     private double lowerBound;
     private double upperBound;
-
     private int sumPulse = 0;
     private double sumSpeed = 0;
-
     private int countPulse = 0;
     private double countSpeed = 0;
     private boolean stopReceivingData = false;
@@ -77,7 +69,7 @@ public class ThirdActivity extends AppCompatActivity {
 
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(this, "Got the permission", Toast.LENGTH_SHORT).show();
-            } else { // if permission is not granted
+            } else {
                 Toast.makeText(this, "Can not proceed! Permission needed", Toast.LENGTH_SHORT).show();
             }
         }
@@ -116,7 +108,6 @@ public class ThirdActivity extends AppCompatActivity {
         setPulseBounds();
 
         stopBtn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
 
@@ -201,18 +192,17 @@ public class ThirdActivity extends AppCompatActivity {
     }
 
     private void gps() {
-
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
         if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
             if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
-                if (Build.VERSION.SDK_INT >= 23) { // Marshmallow
+                if (Build.VERSION.SDK_INT >= 23) {
                     ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
                 }
 
-            } else { // no need to ask for permission
+            } else { 
 
             }
         }
@@ -220,7 +210,6 @@ public class ThirdActivity extends AppCompatActivity {
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-
                 if (location == null) {
                     velocityText.setText("0.00");
                 } else {
@@ -239,17 +228,14 @@ public class ThirdActivity extends AppCompatActivity {
 
             @Override
             public void onStatusChanged(String provider, int status, Bundle extras) {
-
             }
 
             @Override
             public void onProviderEnabled(String provider) {
-
             }
 
             @Override
             public void onProviderDisabled(String provider) {
-
             }
         });
     }
@@ -264,7 +250,6 @@ public class ThirdActivity extends AppCompatActivity {
     }
 
     private void setPulseBounds() {
-
         int maximumPulse = 220 - userAge;
 
         switch (targetWorkout) {
