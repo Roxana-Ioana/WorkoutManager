@@ -1,6 +1,6 @@
-#include<SoftwareSerial.h> //Included SoftwareSerial Library
+#include<SoftwareSerial.h>
 SoftwareSerial SerialEsp(D6, D5);
-//Doamne ajuta!
+
 #include <ESP8266WiFi.h>
 #include <Firebase.h>
 #include <FirebaseArduino.h>
@@ -51,22 +51,11 @@ void loop() {
     {
         int value = SerialEsp.read();
         Serial.println(value);
-        /*if(count < 5)
+       
+        if(value>40)
         {
-          sum+=value;
-          count++;
-        }
-        else
-        {
-          int val = sum/count;*/
-         if(value>40)
-         {
             Firebase.setString("values/pulse", String(value));
-         }
-         /* sum = 0;
-          count = 0;
-        }*/
-
+        }
     }
 }
 
