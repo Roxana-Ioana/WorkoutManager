@@ -10,11 +10,11 @@ SoftwareSerial SerialEsp(D6, D5);
 #include <FirebaseObject.h>
 #include <ESP8266WebServer.h>
 
-#define FIREBASE_HOST "workoutmanager-19385.firebaseio.com"
-#define FIREBASE_AUTH "0HIRtAy2x51oe1sPXR3ZeYZuxUkT1EGCtFfPAufA"
+#define FIREBASE_HOST "***"
+#define FIREBASE_AUTH "***"
 
-const char* ssid = "AndroidAP6781";
-const char* password = "b59bdf492c4a";
+const char* ssid = "***";
+const char* password = "***";
 
 ESP8266WebServer server(80);
 
